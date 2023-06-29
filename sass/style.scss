@@ -1,0 +1,19 @@
+@import "_var.scss";
+@import "_mixins.scss";
+@import "_card.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-size: $fontSizeParagraph;
+}
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: $mainBG;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
