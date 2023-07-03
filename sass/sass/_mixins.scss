@@ -1,0 +1,7 @@
+@mixin  media($breakpoint){
+    @if $breakpoint==laptop{
+        @media screen and (min-width: 769px){
+            @content;
+        }
+    }
+}
