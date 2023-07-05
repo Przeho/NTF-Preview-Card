@@ -1,5 +1,128 @@
 #card {
-    background-color: $cardBG;
-    min-width: 80vw;
-    height: 70vh;
+  background-color: $cardBG;
+  width: 80%;
+  min-height: 85%;
+  border-radius: 5%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  @include media(laptop) {
+    width: 25%;
+    padding: 1rem;
+  }
+  .card__img {
+    position: relative;
+    border-radius: 5%;
+    &:hover::after {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      cursor: pointer;
+      aspect-ratio: 1/1;
+      border-radius: 5%;
+    }
+    &::after {
+      content: "";
+      background-image: url(../img/icon-view.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20%;
+      background-color: $cyanBG;
+      width: 100%;
+      height: 98%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      border-radius: 5%;
+    }
+  }
+
+  h1 {
+    margin-top: 1rem;
+    color: $white;
+    font-size: 1.3rem;
+    @include media(laptop) {
+      margin-top: 0.5rem;
+    }
+  }
+  .card__discription {
+    p {
+      color: $softBlue;
+      line-height: 1.5rem;
+      @include media(laptop) {
+        line-height: 1rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .card__equ {
+    display: flex;
+    justify-content: space-between;
+    .card__equ-eth {
+      display: flex;
+      gap: 10px;
+      p {
+        color: $cyan;
+        @include media(laptop) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .card__equ-clock {
+      display: flex;
+      gap: 10px;
+      p {
+        color: $softBlue;
+        @include media(laptop) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  .card__line {
+    border: 1px;
+    border-top-style: solid;
+    border-color: $line;
+  }
+  .card__footer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    p {
+      color: $white;
+      @include media(laptop) {
+        font-size: 0.8rem;
+      }
+      span {
+        color: $softBlue;
+        @include media(laptop) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .card__footer-img {
+      width: 15%;
+      position: relative;
+      z-index: 1;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 110%;
+        height: 100%;
+        background-color: white;
+        top: -2px;
+        left: -2px;
+        border-radius: 100px;
+        z-index: -1;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
